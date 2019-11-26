@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1094100722921",
+    "firebase_url": "https://pocklet-auth.firebaseio.com",
+    "project_id": "pocklet-auth",
+    "storage_bucket": "pocklet-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094100722921:android:e4b2e50153b7fc928b3c78",
+        "android_client_info": {
+          "package_name": "com.example.pocklet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094100722921-3tn97u67kschgjo8t3b42op3vpkcha28.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0pDNw9h5ZHsM3kVVsZS-9c4h-7fpB6JY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094100722921-3tn97u67kschgjo8t3b42op3vpkcha28.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

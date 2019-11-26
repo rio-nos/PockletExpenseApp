@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/lime_green_background"
+    tools:context="com.example.pocklet.MainActivity">
+
+    <TextView
+        android:id="@+id/headText"
+        android:layout_width="243dp"
+        android:layout_height="87dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:text="@string/pocklet_string"
+        android:textSize="30sp"
+        app:fontFamily="@font/audiowide"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:layout_editor_absoluteY="175dp" />
+
+    <ImageView
+        android:id="@+id/lime_back"
+        android:layout_width="123dp"
+        android:layout_height="86dp"
+        android:layout_above="@+id/loginUsernameText"
+        android:layout_below="@+id/headText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginRight="143dp"
+        android:layout_marginBottom="35dp"
+
+        android:contentDescription="@string/pocklet_string"
+        android:src="@drawable/pocklet_resize"
+        tools:targetApi="donut" />
+
+    <EditText
+        android:id="@+id/loginUsernameText"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_above="@+id/loginPasswordText"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="102dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginRight="99dp"
+        android:layout_marginBottom="13dp"
+        android:background="#11111110"
+        android:drawableLeft="@drawable/user_account"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/username_string"
+        android:autofillHints=""
+        android:drawableStart="@drawable/user_account" tools:targetApi="o"/>
+
+
+    <EditText
+        android:id="@+id/loginPasswordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="103dp"
+        android:layout_marginLeft="103dp"
+        android:layout_marginEnd="97dp"
+        android:layout_marginRight="97dp"
+        android:layout_marginBottom="199dp"
+        android:autofillHints=""
+        android:background="#11111110"
+        android:drawableStart="@drawable/password_lock"
+        android:drawableLeft="@drawable/password_lock"
+        android:ems="10"
+        android:hint="@string/password_string"
+        android:inputType="textPassword"
+        tools:targetApi="o" />
+
+    <TextView
+        android:id="@+id/createView"
+        android:layout_width="124dp"
+        android:layout_height="34dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="146dp"
+        android:layout_marginLeft="146dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginRight="123dp"
+        android:layout_marginBottom="26dp"
+        android:text="@string/create_string" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="500dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/createView"
+        android:layout_marginStart="57dp"
+        android:layout_marginLeft="57dp"
+        android:layout_marginEnd="44dp"
+        android:layout_marginRight="44dp"
+        android:layout_marginBottom="0dp"
+        app:cardBackgroundColor="#96FF54"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="0dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/login_string"
+                android:textSize="25sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

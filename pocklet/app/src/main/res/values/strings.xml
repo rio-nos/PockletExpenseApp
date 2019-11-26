@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pocklet</string>
+    <string name="password_string">Password</string>
+    <string name="pocklet_string">Pocklet</string>
+    <string name="username_string">Username</string>
+    <string name="login_string">Login</string>
+    <string name="create_string">Create an account.</string>
+</resources>
