@@ -15,9 +15,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Registration2Activity extends AppCompatActivity {
+public class RegistrationCompleteActivity extends AppCompatActivity {
 
-    private EditText firstName, lastName, registerEmail, registerPassword;
+    private EditText firstName, lastName;
     private CardView registerButton;
     private FirebaseAuth firebaseAuth;
 
@@ -25,11 +25,13 @@ public class Registration2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registration);
-        setupUIViews();
-
+        setContentView(R.layout.activity_registration2);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        firstName = (EditText) findViewById(R.id.firstNameText);
+        lastName = (EditText) findViewById(R.id.lastNameText);
+        registerButton = (CardView) findViewById(R.id.registerCard);
 
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,19 +39,20 @@ public class Registration2Activity extends AppCompatActivity {
                 if (validate())
                 {
                     //Upload data to the database
-                    String user_email = registerEmail.getText().toString().trim();
-                    String user_password = registerPassword.getText().toString().trim();
+                    Intent intent = getIntent();
+                    String user_email = intent.getStringExtra("email").trim();
+                    String user_password = intent.getStringExtra("password").trim();
                     firebaseAuth.createUserWithEmailAndPassword(user_email, user_password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful())
                             {
-                                Toast.makeText(Registration2Activity.this, "Registration Successful.", Toast.LENGTH_SHORT).show();
-                                startActivity(new Intent(Registration2Activity.this, MainActivity.class));
+                                Toast.makeText(RegistrationCompleteActivity.this, "Registration Successful.", Toast.LENGTH_SHORT).show();
+                                startActivity(new Intent(RegistrationCompleteActivity.this, HomeActivity.class));
                             }
                             else
                             {
-                                Toast.makeText(Registration2Activity.this, "Registration Failed.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegistrationCompleteActivity.this, "Registration Failed.", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -59,23 +62,13 @@ public class Registration2Activity extends AppCompatActivity {
 
     }
 
-    private void setupUIViews() {
-        firstName = (EditText) findViewById(R.id.firstName);
-        lastName = (EditText) findViewById(R.id.lastNameText);
-        registerEmail = (EditText) findViewById(R.id.registerEmailText);
-        registerPassword = (EditText) findViewById(R.id.registerPasswordText);
-        registerButton = (CardView) findViewById(R.id.nextCard);
-    }
-
     private Boolean validate() {
 
         Boolean result = false;
         String name = firstName.getText().toString();
         String last = lastName.getText().toString();
-        String email = registerEmail.getText().toString();
-        String pass = registerPassword.getText().toString();
 
-        if (name.isEmpty() || last.isEmpty() || email.isEmpty() || pass.isEmpty())
+        if (name.isEmpty() || last.isEmpty())
         {
             Toast.makeText(this, "Please enter all the details", Toast.LENGTH_SHORT).show();
         }
@@ -85,10 +78,4 @@ public class Registration2Activity extends AppCompatActivity {
         }
         return result;
     }
-
-//    @Override
-//    public void finish() {
-//        super.finish();
-//        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
-//    }
 }

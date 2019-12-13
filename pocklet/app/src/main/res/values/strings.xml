@@ -5,4 +5,24 @@
     <string name="username_string">Username</string>
     <string name="login_string">Login</string>
     <string name="create_string">Create an account.</string>
+
+    <string-array name="incType">
+        <item>Salary</item>
+        <item>Property</item>
+        <item>Profit</item>
+        <item>Interest</item>
+        <item>Passive</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="expType">
+        <item>Bills</item>
+        <item>Transportation</item>
+        <item>Food &amp; Drink</item>
+        <item>Groceries</item>
+        <item>Shopping</item>
+        <item>Electronics</item>
+        <item>Other</item>
+    </string-array>
+
 </resources>

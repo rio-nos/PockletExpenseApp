@@ -12,21 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.plaid.link.LinkActivity"/>
         <activity android:name=".HomeActivity"/>
-        <activity android:name=".RegistrationActivity"/>
-        <activity android:name=".Registration2Activity"/>
+        <activity android:name=".RegistrationInitiateActivity"/>
+        <activity android:name=".RegistrationCompleteActivity"/>
+        <activity android:name=".IncomeActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".IncomeChartActivity"/>
+        <activity android:name=".ExpenseActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:name=".ExpenseChartActivity"/>
+        <activity android:name="org.achartengine.GraphicalActivity" />
+        <activity android:name=".BalanceTransactionActivity"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <meta-data
-            android:name="com.plaid.link.public_key"
-            android:value="[7ee87ea45668f3e6bc24de5e372920]"/>
     </application>
-
 </manifest>

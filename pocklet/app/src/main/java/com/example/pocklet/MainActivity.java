@@ -24,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText Password;
     private CardView Login;
     private int counter = 5;
-    private TextView Message;
     private TextView Registration;
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -37,10 +36,7 @@ public class MainActivity extends AppCompatActivity {
         Username = (EditText) findViewById(R.id.loginUsernameText);
         Password = (EditText) findViewById(R.id.loginPasswordText);
         Login = (CardView) findViewById(R.id.loginCard);
-        Message = (TextView) findViewById(R.id.messageView);
         Registration = (TextView) findViewById(R.id.createView);
-
-        Message.setText("");
 
         firebaseAuth = FirebaseAuth.getInstance();
         FirebaseUser user = firebaseAuth.getCurrentUser();
@@ -62,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         Registration.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
+                Intent intent = new Intent(MainActivity.this, RegistrationInitiateActivity.class);
                 startActivity(intent);
             }
         });

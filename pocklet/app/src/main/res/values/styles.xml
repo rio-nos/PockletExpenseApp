@@ -7,8 +7,28 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowAnimationStyle">@style/slideAllAnimation</item>
+        <item name="bottomSheetDialogTheme" >@style/AppBottomSheetDialogTheme</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:dropDownListViewStyle">@style/SpinnerTheme</item>
     </style>
 
+    <style name="SpinnerTheme" parent="Widget.AppCompat.ListView.DropDown">
+        <item name="android:textSize">14dp</item>
+        <item name="android:fontFamily">@font/audiowide</item>
+        <item name="android:divider">#000000</item>
+        <item name="android:dividerHeight">2dp</item>
+    </style>
+
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bottom_sheet_drawable</item>
+    </style>
 
     <style name="slideAllAnimation" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
